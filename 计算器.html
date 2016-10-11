@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+   <title>Document</title>
+   <link rel="stylesheet" href="animate.css">
+   <style media="screen">
+      *{margin: 0;padding: 0;box-sizing: border-box;}
+      .caculate{width: 500px;height: 500px;background: lightgray;margin: 0 auto;}
+      .wrap{width: 80%;height: 90%;margin: 0 auto;background: #f5f5f5;position: relative;top:5%;padding-top: 19px;padding-left: 20px;padding-right: 20px;}
+      .wrap h3{margin-bottom: 20px;}
+      input{width: 100%;height: 29px;font-size: 20px;display: block;text-align: right;padding-right: 7px;color:lightblue;}
+      .wrap p{color:gray;font-size: 13px;}
+      .board{border:1px solid white;margin: 20px auto;overflow: hidden;}
+      button{text-align: center;width: 61px;margin:5px;background: lightgray;height: 61px;line-height: 61px;float:left;border:0;}
+   </style>
+</head>
+<body>
+   <div class="caculate animated bounceIn">
+      <div class="wrap">
+         <h3>简单计算器</h3>
+         <input type="text" value="0" id='in'>
+         <div class="board">
+            <button class="button animated">7</button>
+            <button class="button animated">8</button>
+            <button class="button animated">9</button>
+            <button class="button animated">&lt;</button>
+            <button class="button animated">C</button>
+            <button class="button animated">4</button>
+            <button class="button animated">5</button>
+            <button class="button animated">6</button>
+            <button class="button animated">×</button>
+            <button class="button animated">÷</button>
+            <button class="button animated">1</button>
+            <button class="button animated">2</button>
+            <button class="button animated">3</button>
+            <button class="button animated">+</button>
+            <button class="button animated">-</button>
+            <button class="button animated">0</button>
+            <button class="button animated">00</button>
+            <button class="button animated">.</button>
+            <button class="button animated">%</button>
+            <button class="button animated">=</button>
+         </div>
+         <p>欢迎使用js计算器</p>
+      </div>
+   </div>
+   <script>
+      (function(){
+         var input=document.getElementById('in')
+         var btns=document.querySelectorAll('button')
+         var arr=[]
+         var single=[]
+         var pn,nn
+         var aninate=['zoomIn','fadeInUp','flipInY']
+         for(var i=0;i<btns.length;i++){
+            btns[i].onclick=function(){
+               this.className+=' '+aninate[1]
+               if(this.innerHTML=='C') {
+                  input.value='0'
+                  arr.splice(0,arr.length)
+               }
+               if(this.innerHTML=='&lt;'){
+                  if(arr.length==0&&input.value==0){
+                     input.value=0
+                  }else if(arr.length!==0&&input.value!=0){
+                     if(arr.length==1){
+                        arr.pop()
+                        input.value=0
+                     }else{
+                        arr.pop()
+                        input.value=arr.join('')
+                     }
+                  }
+               }
+               if(this.innerHTML<10||this.innerHTML=='.') {
+                  arr.push(this.innerHTML)
+                  input.value=arr.join('')
+               }
+               if(this.innerHTML=='+'||this.innerHTML=='-'||this.innerHTML=='×'||this.innerHTML=='÷'||this.innerHTML=='%'){
+                  pn=parseFloat(input.value)
+                  arr.splice(0,arr.length)
+                  single.push(this.innerHTML)
+               }
+               if(this.innerHTML=='='){
+                  nn=parseFloat(input.value)
+                  switch (single[single.length-1]) {
+                     case '+':
+                        input.value=pn+nn
+                        break;
+                     case '-':
+                        input.value=pn-nn
+                        arr.splice(0,arr.length)
+                        arr.concat(input.value.toString().split(''))
+                        break;
+                     case '×':
+                        input.value=pn*nn
+                        arr.splice(0,arr.length)
+                        arr.concat(input.value.toString().split(''))
+                        break;
+                     case '÷':
+                           input.value=pn/nn
+                           if(input.value==Infinity){
+                              alert('除数不能为0，重新输入')
+                           }
+                           arr.splice(0,arr.length)
+                           arr.concat(input.value.toString().split(''))
+                        break;
+                     case '%':
+                        input.value=pn%nn
+                        arr.splice(0,arr.length)
+                        arr.concate(input.value.toString().split(''))
+                        break;
+                     default:
+                  }
+               }
+            }
+         }
+      })()
+   </script>
+</body>
+</html>
