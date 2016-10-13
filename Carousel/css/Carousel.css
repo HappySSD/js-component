@@ -1,0 +1,88 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+#Carousel {
+    width: 1130px;
+    height: 500px;
+    margin: 0 auto;
+    position: relative;
+    overflow: hidden;
+}
+
+.p-lists {
+    overflow: hidden;
+    position: absolute;
+    z-index: 3;
+}
+
+.p-lists a {
+    display: block;
+    float: left;
+}
+
+#Carousel ul {
+    list-style-type: none;
+    overflow: hidden;
+    position:absolute;
+    top:89%;
+    left:50%;
+    margin-left:-23px;
+    z-index: 10;
+}
+
+#Carousel li {
+    float: left;
+    margin: 0 6px;
+    width: 17px;
+    height: 17px;
+    -webkit-border-radius: 17px;
+    -moz-border-radius: 17px;
+    -ms-border-radius: 17px;
+    -o-border-radius: 17px;
+    border-radius: 17px;
+    background: gray;
+    opacity: 0.5;
+    filter: alpha(opacity=50);
+    cursor: pointer;
+}
+.on{
+   background: orangered!important;
+   opacity: 1!important;
+   filter: alpha(opacity=100)!important;
+}
+#Carousel span:nth-of-type(1){
+   position: absolute;
+   width: 30px;
+   height: 50px;
+   background-color: gray;
+   color:white;
+   font-size: 23px;
+   top:50%;
+   margin-top: -15px;
+   z-index: 10;
+   cursor: pointer;
+   line-height: 50px;
+   text-align: center;
+   opacity: 0.5;
+   filter: alpha(opacity=50);
+}
+#Carousel span:nth-of-type(2){
+   position: absolute;
+   width: 30px;
+   height: 50px;
+   background-color: gray;
+   color:white;
+   font-size: 23px;
+   left:100%;
+   top:50%;
+   margin-left: -30px;
+   margin-top: -25px;
+   z-index: 10;
+   cursor: pointer;
+   line-height: 50px;
+   text-align: center;
+   opacity: 0.5;
+   filter: alpha(opacity=50);
+}

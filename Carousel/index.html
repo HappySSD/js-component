@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+   <title>Document</title>
+   <link rel="stylesheet" href="css/Carousel.css">
+</head>
+<body>
+   <div id="Carousel">
+      <div class="p-lists">
+         <a href="#" title='photo-list'><img src="imgs/TB2KnxGacgd61BjSZFEXXaBjVXa_!!78-0-yamato.jpg" alt="p3"></a>
+         <a href="#" title='photo-list'><img src="imgs/TB1GXi5NFXXXXbXXpXXXXXXXXXX-1130-500.jpg_q100 (1).jpg" alt="p1"></a>
+         <a href="#" title='photo-list'><img src="imgs/TB1yxvdNFXXXXaWapXXSutbFXXX.jpg" alt="p2"></a>
+         <a href="#" title='photo-list'><img src="imgs/TB2KnxGacgd61BjSZFEXXaBjVXa_!!78-0-yamato.jpg" alt="p3"></a>
+         <a href="#" title='photo-list'><img src="imgs/TB1GXi5NFXXXXbXXpXXXXXXXXXX-1130-500.jpg_q100 (1).jpg" alt="p1"></a>
+      </div>
+      <ul>
+         <li class="on"></li>
+         <li></li>
+         <li></li>
+      </ul>
+      <span>&lt;</span>
+      <span>&gt;</span>
+   </div>
+   <script src='js/图片轮播.js'></script>
+   <script>
+      var carousel=new Carousel({id:'Carousel',className:'p-lists'})
+      carousel.init()
+   </script>
+</body>
+</html>
