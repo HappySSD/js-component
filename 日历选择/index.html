@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>demo</title>
+	<link rel="stylesheet" href="calendar.css">
+	<style>
+		
+	</style>
+</head>
+<body>
+	<input type="text" id="getCon">
+	<div id="day"></div>
+	<script src='calendar.js'></script>
+	<script>
+		document.getElementById('getCon').onfocus=function(){
+			var calendar=new Calendar('day','getCon')
+			calendar.init()
+		}
+	</script>
+</body>
+</html>

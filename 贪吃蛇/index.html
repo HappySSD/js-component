@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <meta charset="utf-8"/>
+    <title>JS贪吃蛇</title>
+    <style type="text/css">
+        #pannel {
+            margin-bottom: 10px;
+        }
+
+        #pannel table {
+           border: 1px solid #f5f5f5;
+            background: url('bg.jpg') no-repeat 0 0 /100% 100%;
+        }
+
+        #pannel table td {
+            width: 10px;
+            height: 10px;
+            border-radius: 10px;
+            font-size: 0;
+            line-height: 0;
+            overflow: hidden;
+        }
+
+        #pannel table .snake {
+            background-color: rgb(246, 244, 1);
+        }
+
+        #pannel table .food {
+           background: rgb(21, 150, 123);
+            box-shadow: 0 0 0 5px orange;
+        }
+        .snakeHead{
+           background:red!important;
+        }
+        #score{
+           display: inline-block;
+           width: 90px;
+           text-align: center;
+           border:1px solid #f5f5f5;
+           color:rgb(5, 23, 166);
+        }
+    </style>
+</head>
+
+<body>
+    <div id="pannel"></div>
+    <div>
+        <select id="selSize">
+                <option value="20">20*20</option>
+                <option value="30">30*30</option>
+                <option value="40">40*40</option>
+            </select>
+        <select id="selSpeed">
+                <option value="500">速度-慢</option>
+                <option value="250" selected="selected">速度-中</option>
+                <option value="100">速度-快</option>
+            </select>
+        <input type="button" id="btnStart" value="开始" />
+        <span id="score">得分：0</span>
+    </div>
+    <script type="text/javascript" src='snake.js'></script>
+</body>
+
+</html>
